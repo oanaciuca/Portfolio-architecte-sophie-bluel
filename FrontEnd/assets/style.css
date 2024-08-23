@@ -1,188 +1,781 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+/* Réinitialisation des marges et paddings */
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    background-color: #FFFEF8;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/** end reset css**/
-body {
-	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
-	font-size: 14px;
-}
-header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
-}
-section {
-	margin: 50px 0
+    display: block;
 }
 
-h1{
-	display: flex;
-	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C
+body {
+    line-height: 1;
+    max-width: 1140px;
+    margin: auto;
+    font-family: 'Work Sans';
+    font-size: 14px;
+}
+
+input, textarea, select{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+label{
+    margin-top: 30px;
+}
+
+/* Styles pour le header */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+/* Styles pour les sections */
+section {
+    margin: 50px 0;
+}
+
+/* Styles pour les titres */
+h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Syne';
+    font-size: 22px;
+    font-weight: 800;
+    color: #B1663C;
 }
 
 h1 > span {
-	font-family: 'Work Sans';
-	font-size:10px;
-	letter-spacing: 0.1em;
-;
+    font-family: 'Work Sans';
+    font-size: 10px;
+    letter-spacing: 0.1em;
 }
 
-h2{
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154
+h2 {
+    font-family: 'Syne';
+    font-weight: 700;
+    font-size: 30px;
+    color: #1D6154;
 }
+
+/* header */
+
+.edit-mode{
+    background-color: #000;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.edit-mode button{
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
+
+.edit-mode button i{
+    background-color: transparent;
+    margin-right: 5px;
+}
+
+/* Styles pour les listes de navigation */
 nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-
+    display: flex;
+    align-items: center;
+    list-style-type: none;
 }
+
 nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
+    padding: 0 10px;
+    font-size: 1.2em;
+	margin: 0; /* Assurez-vous qu'il n'y a pas de marge supplémentaire */
+    display: flex; /* Assurez-vous que les éléments enfants sont alignés */
+    align-items: center; /* Centrer les éléments enfants verticalement */
+}
+
+nav li a {
+    color: inherit; /* Utilise la couleur du li */
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    font-size: inherit; /* Utilise la taille de police du li */
+    padding: 0; /* Assure qu'il n'y a pas de padding supplémentaire */
+    margin: 0; /* Assure qu'il n'y a pas de marge supplémentaire */
+    display: inline-block; /* Permet de contrôler l'espacement */
+    cursor: pointer;
+}
+
+nav .logout{
+    display: none;
 }
 
 li:hover {
-	color: #B1663C;
+    color: #B1663C;
 }
+
+nav li:hover a {
+    color: #B1663C; /* Couleur au survol du lien */
+}
+
+/* Styles pour l'introduction */
 #introduction {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
+
 #introduction figure {
-	flex: 1
+    flex: 1;
 }
+
 #introduction img {
-	display: block;
-	margin: auto;
-	width: 80%;
+    display: block;
+    margin: auto;
+    width: 80%;
 }
 
 #introduction article {
-	flex: 1
+    flex: 1;
 }
+
 #introduction h2 {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
+
+/* Styles pour le header du portfolio */
+.portfolio-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-header h2 {
+    margin: 0;
+}
+
+.portfolio-header button {
+    border: none;
+    background-color: #FFFEF8;
+}
+
+.portfolio-header .fa-pen-to-square {
+    margin-bottom: 25px;
+    margin-left: 10px;
+    border: none;
+}
+
+/* Styles pour le portfolio */
 #portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
+    text-align: center;
+    margin-bottom: 1em;
 }
+
+#portfolio .filtres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.filtres button {
+    border: solid 1px #1D6154;
+    border-radius: 60px;
+    height: 37px;
+    font-size: 16px;
+    font-family: Syne;
+}
+
+.filtres .all {
+    width: 100px;
+    background-color: #1D6154;
+    color: #ffff;
+    margin-right: 10px;
+}
+
+.filtres .btn-filtre {
+    color: #1D6154;
+    background-color: #FFFEF8;
+    margin-right: 10px;
+}
+
+.filtres button:nth-child(2) {
+    width: 100px;
+}
+
+.filtres button:nth-child(3) {
+    width: 157px;
+}
+
+.filtres button:nth-child(4) {
+    width: 198px;
+}
+
+/* Styles pour la galerie */
 .gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.gallery figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
 }
 
 .gallery img {
-	width: 100%;
-
+    width: 100%;
+    height: auto;
+    display: block;
 }
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.btn-back{
+    border: none;
+    background: none;
+}
+
+.bg-img{
+    padding: 10px;
+}
+
+.bg-img, #image-preview-container{
+    background-color: rgba(232, 241, 246, 1);
+}
+
+/* Styles pour le contact */
 #contact {
-	width: 50%;
-margin: auto;
+    width: 50%;
+    margin: auto;
 }
-#contact > * {
-	text-align: center;
 
+#contact > * {
+    text-align: center;
 }
-#contact h2{
-	margin-bottom: 20px;
+
+#contact h2 {
+    margin-bottom: 20px;
 }
+
 #contact form {
-	text-align: left;
-	margin-top:30px;
-	display: flex;
-	flex-direction: column;
+    text-align: left;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 #contact input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    height: 50px;
+    font-size: 1.2em;
+    border: none;
 }
+
 #contact label {
-	margin: 2em 0 1em 0;
+    margin: 2em 0 1em 0;
 }
+
 #contact textarea {
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    border: none;
 }
 
-input[type="submit"]{
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin : 2em auto ;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px ;
+input[type="submit"] {
+    font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #1D6154;
+    margin: 2em auto;
+    width: 180px;
+    text-align: center;
+    border-radius: 60px;
 }
 
+/* Styles pour le footer */
 footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
+    display: flex;
+    justify-content: flex-end;
+    margin: 2em;
 }
 
+/* Styles pour le login */
+#login {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#login h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#login-form input {
+    border: none;
+    background-color: #ffffff;
+    width: 100%;
+    height: 51px;
+}
+
+#login label,
+#login input[type="email"],
+#login input[type="password"],
+#login input[type="submit"] {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16.42px;
+    text-align: left;
+    color: #3D3D3D;
+}
+
+#login input[type="submit"] {
+    background-color: #1D6154;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    width: 179px;
+    height: 36px;
+    text-align: center;
+}
+
+/* Styles pour le texte du formulaire de connexion */
+.forgot-password {
+    color: #3D3D3D;
+    font-weight: bold;
+}
+
+/* Styles pour les modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto; /* Centrer verticalement */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    overflow-y: auto;
+    max-height: 80vh; /* Limiter la hauteur */
+}
+
+/* Bouton de fermeture des modales */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-content h3 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+	
+
+
+.modal-gallery-content {
+    background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ligne séparatrice */
+.gallery-separator {
+    border-bottom: 1px solid #b3b3b3; /* Ligne grise clair */
+    width: 100%; /* Étendre sur toute la largeur disponible */
+    margin: 20px 0; /* Espacement autour de la ligne */
+}
+
+#gallery-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+#gallery-container figure {
+    position: relative;
+    margin: 0; 
+}
+
+#gallery-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.delete-icon {
+    color: red; /* Couleur pour voir les icônes, vous pouvez ajuster selon vos besoins */
+    cursor: pointer; /* Pour indiquer que c'est cliquable */
+	position: absolute; /* ou relative, selon le contexte */
+    top: 10px; /* Ajuster selon vos besoins */
+    right: 10px; /* Ajuster selon vos besoins */
+    background-color: rgba(255, 0, 0, 0.1); /* Fond temporaire pour le débogage */
+}
+
+/* Styles pour le bouton d'ajout de photo */
+#add-photo {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1d6154;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+/* Styles pour le formulaire d'ajout de photo */
+.modal-form-content {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#ajout-photo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#ajout-photo-form label {
+    margin-bottom: 5px;
+}
+
+#ajout-photo-form input,
+#ajout-photo-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#ajout-photo-form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#ajout-photo-form button:hover {
+    background-color: #218838;
+}
+
+.modal[aria-hidden="false"] {
+    display: block; /* Afficher lorsque aria-hidden est false */
+}
+
+/* Styles pour le message d'erreur */
+#error-message {
+    color: red;
+    display: none;
+}
+
+figure {
+    position: relative; /* Position relative pour contenir l'icône absolument positionnée */
+    margin: 0;
+    overflow: hidden;
+}
+
+
+/* Style pour positionner l'icône de suppression dans le coin supérieur droit */
+figure .delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+	background-color: black;
+	padding: 5px;
+}
+
+/* Style pour la bande noire contenant l'icône et le texte */
+.edit-mode-banner {
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Style pour les icônes Font Awesome dans la bande noire */
+.edit-mode-banner i {
+    color: white; /* Changer la couleur de l'icône en blanc */
+}
+
+/* Style pour le bouton Logout */
+.edit-mode-banner a {
+    color: white; /* Couleur du texte du bouton Logout */
+    text-decoration: none; /* Retirer le soulignement */
+    margin-left: 10px; /* Espacement entre l'icône et le texte */
+}
+/* Ajoutez ceci dans votre fichier CSS */
+.hidden {
+    display: none;
+}
+
+/* Style pour la bande noire en mode édition */
+.edit-mode-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre les éléments horizontalement */
+    background-color: black; /* Couleur de fond noire */
+    color: white; /* Couleur du texte blanche */
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* S'assurer que la bande est au-dessus des autres éléments */
+    font-family: 'Work Sans', sans-serif; /* Police pour le texte */
+}
+
+/* Style pour l'icône */
+.edit-mode-banner i {
+    color: white; /* Couleur de l'icône blanche */
+    background-color: black; /* Couleur de fond de l'icône noire */
+    padding: 5px; /* Ajouter un peu de padding autour de l'icône */
+    border-radius: 50%; /* Arrondir les coins pour faire un cercle autour de l'icône */
+    font-size: 18px; /* Taille de l'icône */
+}
+
+/* Style pour le texte */
+.edit-mode-banner span {
+    background-color: black; /* Couleur de fond du texte noire */
+    padding: 5px; /* Ajouter un peu de padding autour du texte */
+    font-size: 16px; /* Taille du texte */
+}
+
+/* Style pour la flèche de retour dans la modale */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    font-size: 20px; /* Taille de l'icône */
+    cursor: pointer;
+    z-index: 1100; /* Assurer que le bouton est au-dessus des autres éléments */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Largeur du bouton */
+    height: 40px; /* Hauteur du bouton */
+}
+
+/* Styles pour le formulaire d'ajout de photo */
+.modal-form-content {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#ajout-photo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#ajout-photo-form label {
+    margin-bottom: 5px;
+}
+
+#ajout-photo-form input,
+#ajout-photo-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#ajout-photo-form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#ajout-photo-form button:hover {
+    background-color: #218838;
+}
+
+.modal[aria-hidden="false"] {
+    display: block; /* Afficher lorsque aria-hidden est false */
+}
+
+
+
+
+.icon i {
+    display: block;
+    text-align: center;
+    font-size: 59.62px;
+    color: #b9c5cc;
+    margin-bottom: 10px;
+}
+
+.plus-ajout ::content {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-ajout-container {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+}
+
+.plus-ajout {
+    display: inline-flex;
+    justify-content: center;
+    width: 173px;
+    text-align: center;
+    border-style: solid;
+    border-radius: 50px;
+    background-color: #cbd6dc;
+    color: #306685;
+    border-color: #cbd6dc;
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+    font-weight: bold;
+}
+
+.plus{
+    background-color: #cbd6dc;
+    margin-right: 5px;
+}
+
+.jpg {
+    text-align: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#ajout-photo-form label {
+    margin-bottom: 5px;
+}
+
+/*  style pour les labels et les champs de texte */
+#ajout-photo-form label[for="title"],
+#ajout-photo-form label[for="category"] {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Conteneur pour les champs de formulaire */
+.form-fields-container {
+    width: 100%; 
+    max-width: 600px; 
+}
+
+#ajout-photo-form input[type="text"],
+#ajout-photo-form select {
+    width: 100%;
+    min-width: 420px;
+    height: 51px;
+    min-height: 51px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: #ffffff;
+}
+
+/** Formulaire ajout **/
+
+.button-container {
+    text-align: center; 
+}
+
+#ajout-photo-form button {
+    border-radius: 50px;
+    width: 237px;
+    font-family: Syne;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+#ajout-photo-form button:disabled {
+    padding: 10px;
+    background-color: #a7a7a7; 
+    color: #ffffff; 
+    border: none;
+    cursor: not-allowed; 
+}
+
+#ajout-photo-form button{
+    background-color: #1d6154;
+    display: block;
+    margin: 20px auto;
+}
+
+.modal[aria-hidden="false"] {
+    display: block; 
+}
+
+.form-add-content{
+    padding: 0 100px 50px;
+}
