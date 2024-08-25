@@ -629,6 +629,10 @@ figure .delete-icon {
     gap: 10px;
 }
 
+.bg-img  {
+	background-color: #ffffff;
+}
+
 #ajout-photo-form label {
     margin-bottom: 5px;
 }
@@ -703,6 +707,7 @@ figure .delete-icon {
 
 .jpg {
     text-align: center;
+	color: #444444;
 }
 
 input[type="file"] {
@@ -720,6 +725,10 @@ input[type="file"] {
     margin-bottom: 5px;
     font-weight: bold;
     text-align: left;
+}
+
+#title, #category {
+	color: #3D3D3D;
 }
 
 /* Conteneur pour les champs de formulaire */

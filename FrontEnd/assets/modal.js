@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        console.log('token:', token);
+
         const formData = new FormData(ajoutPhotoForm);
 
         fetch('http://localhost:5678/api/works', {
@@ -148,11 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { 'Authorization': `Bearer ${token}` },
             body: formData
         })
-        .then(response => {
+        .then(async response => {
             if (response.ok) {
                 return response.json();
             } else {
-                return response.text().then(text => Promise.reject(text));
+                const text = await response.text();
+                return await Promise.reject(text);
             }
         })
         .then(() => {
