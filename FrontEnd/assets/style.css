@@ -69,8 +69,12 @@ h2 {
 /* header */
 
 .edit-mode{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #000;
     width: 100%;
+    height: 59px;
     text-align: center;
     padding: 10px;
 }
@@ -79,6 +83,9 @@ h2 {
     background-color: transparent;
     color: #fff;
     border: none;
+    padding: 0;
+    width: 129px;
+    height: 19px;
 }
 
 .edit-mode button i{
@@ -434,9 +441,10 @@ footer nav ul {
 
 /* Ligne séparatrice */
 .gallery-separator {
-    border-bottom: 1px solid #b3b3b3; /* Ligne grise clair */
-    width: 100%; /* Étendre sur toute la largeur disponible */
-    margin: 20px 0; /* Espacement autour de la ligne */
+    border-bottom: 1px solid #b3b3b3; 
+    width: 100%; 
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #gallery-container {
